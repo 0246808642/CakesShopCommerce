@@ -2,8 +2,8 @@ package com.example.commerce.CakeShopcommerce.domain.client;
 
 
 import com.example.commerce.CakeShopcommerce.domain.address.Address;
-import com.example.commerce.CakeShopcommerce.domain.client.DTO.customerRegistrationData;
-import com.example.commerce.CakeShopcommerce.domain.client.DTO.updateClient;
+import com.example.commerce.CakeShopcommerce.domain.client.dtoClient.customerRegistrationData;
+import com.example.commerce.CakeShopcommerce.domain.client.dtoClient.updateClient;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

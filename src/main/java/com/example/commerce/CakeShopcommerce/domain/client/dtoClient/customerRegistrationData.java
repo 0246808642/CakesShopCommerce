@@ -1,7 +1,7 @@
-package com.example.commerce.CakeShopcommerce.domain.client.DTO;
+package com.example.commerce.CakeShopcommerce.domain.client.dtoClient;
 
 import com.example.commerce.CakeShopcommerce.domain.address.AddressDTO;
-import com.example.commerce.CakeShopcommerce.domain.client.IdadeMinima;
+import com.example.commerce.CakeShopcommerce.domain.client.validator.IdadeMinima;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

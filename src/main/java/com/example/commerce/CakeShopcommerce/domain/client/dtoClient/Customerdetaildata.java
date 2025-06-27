@@ -1,4 +1,4 @@
-package com.example.commerce.CakeShopcommerce.domain.client.DTO;
+package com.example.commerce.CakeShopcommerce.domain.client.dtoClient;
 
 import com.example.commerce.CakeShopcommerce.domain.address.Address;
 import com.example.commerce.CakeShopcommerce.domain.client.Client;

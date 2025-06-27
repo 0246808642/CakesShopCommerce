@@ -1,4 +1,4 @@
-package com.example.commerce.CakeShopcommerce.domain.client.DTO;
+package com.example.commerce.CakeShopcommerce.domain.client.dtoClient;
 
 import com.example.commerce.CakeShopcommerce.domain.address.UpdateAddressDTO;
 import jakarta.validation.constraints.NotNull;

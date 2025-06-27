@@ -1,4 +1,4 @@
-package com.example.commerce.CakeShopcommerce.domain.client;
+package com.example.commerce.CakeShopcommerce.domain.client.validator;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

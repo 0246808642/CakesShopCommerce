@@ -1,9 +1,10 @@
 package com.example.commerce.CakeShopcommerce.controller;
 
 
-import com.example.commerce.CakeShopcommerce.domain.client.DTO.EmptyListResponse;
+import com.example.commerce.CakeShopcommerce.domain.client.dtoClient.EmptyListClientResponse;
 import com.example.commerce.CakeShopcommerce.domain.client.*;
-import com.example.commerce.CakeShopcommerce.domain.client.DTO.*;
+import com.example.commerce.CakeShopcommerce.domain.client.dtoClient.*;
+import com.example.commerce.CakeShopcommerce.domain.client.repository.ClientRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/client")
-public class ControllerClients {
+public class controllerClients {
     @Autowired
     private ClientRepository repository;
 
@@ -32,7 +33,7 @@ public class ControllerClients {
     public ResponseEntity<?>  listClient(@PageableDefault(size = 5, sort = {"id"})Pageable pag){
     var page = repository.findAllByActiveTrue(pag).map(dataCustomer::new);
         if (page.isEmpty()) {
-            return ResponseEntity.ok(new EmptyListResponse("Lista de clientes vazia."));
+            return ResponseEntity.ok(new EmptyListClientResponse("Lista de clientes vazia."));
         }
     return ResponseEntity.ok(page);
     }

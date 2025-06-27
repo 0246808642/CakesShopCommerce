@@ -1,6 +1,6 @@
 package com.example.commerce.CakeShopcommerce.domain.address;
 
-import com.example.commerce.CakeShopcommerce.domain.client.DTO.updateClient;
+import com.example.commerce.CakeShopcommerce.domain.client.dtoClient.updateClient;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
