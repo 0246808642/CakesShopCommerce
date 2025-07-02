@@ -38,10 +38,10 @@ public class controllerClients {
     return ResponseEntity.ok(page);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") // busca por id
     public ResponseEntity<?> detailCustomer(@PathVariable Long id){
         var client = repository.getReferenceById(id);
-        return ResponseEntity.ok( new DataperfilCostumer(client));
+        return ResponseEntity.ok( new DataPerfilCostumer(client));
     }
 
 
@@ -50,7 +50,7 @@ public class controllerClients {
     public ResponseEntity update(@RequestBody @Valid updateClient data){
         var client = repository.getReferenceById(data.id());
         client.updateData(data);
-        return ResponseEntity.ok(new DataperfilCostumer(client));
+        return ResponseEntity.ok(new DataPerfilCostumer(client));
     }
 
     @DeleteMapping("/{id}")

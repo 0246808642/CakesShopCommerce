@@ -2,13 +2,11 @@ package com.example.commerce.CakeShopcommerce.domain.address;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 public record AddressDTO(
         @NotBlank
-        @Pattern(
-                regexp = "\\d{2}",
-                message = "Deve ser so o UF da capital"
-        )
+        @Size(min = 2, max = 2, message = "Deve conter exatamente 2 caracteres")
         String state,
         @NotBlank
         String city,

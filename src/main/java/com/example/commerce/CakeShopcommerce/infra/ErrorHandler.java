@@ -20,7 +20,7 @@ public class ErrorHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Recurso nao encontrado: "+ ex.getMessage());
     }
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity error400(MethodArgumentNotValidException ex){
+    public ResponseEntity error400(MethodArgumentNotValidException ex, EntityNotFoundException exception){
         var error = ex.getFieldErrors();
 
         return ResponseEntity.badRequest().body(error.stream().map(ErrorsDTO:: new).toList());
