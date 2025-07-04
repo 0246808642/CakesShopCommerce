@@ -2,8 +2,9 @@ package com.example.commerce.CakeShopcommerce.domain.staff;
 
 
 import com.example.commerce.CakeShopcommerce.domain.address.Address;
+import com.example.commerce.CakeShopcommerce.domain.staff.dtoStaff.UpdateStaff;
 import com.example.commerce.CakeShopcommerce.domain.staff.dtoStaff.staffRegistrationData;
-import com.example.commerce.CakeShopcommerce.domain.staff.enums.Adjutancy;
+import com.example.commerce.CakeShopcommerce.domain.enums.OperationalRole;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -35,7 +36,7 @@ public class Staff {
     private Address address;
 
     @Enumerated(EnumType.STRING)
-    private Adjutancy adjutancy;
+    private OperationalRole operationalRole;
 
 
     public Staff(@Valid staffRegistrationData data) {
@@ -47,8 +48,29 @@ public class Staff {
         this.surname = data.surname();
         this.email = data.email();
         this.numberRegistration = data.numberRegistration();
-        this.adjutancy = data.adjutancy();
+        this.operationalRole = data.operationalRole();
         this.address= new Address(data.address());
 
+    }
+
+    public void update( UpdateStaff data) {
+        if(data.name() != null){
+            this.name = data.name();
+        }
+        if(data.surname() != null){
+            this.surname = data.surname();
+        }
+        if(data.telephone() != null){
+            this.telephone = data.telephone();
+        }
+        if(data.age() != 0){
+            this.age = data.age();
+        }
+        this.address.updateAddressStaff(data);
+
+    }
+
+    public void remove(Long id) {
+        this.active = false;
     }
 }

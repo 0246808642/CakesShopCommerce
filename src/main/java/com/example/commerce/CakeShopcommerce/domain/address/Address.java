@@ -1,6 +1,7 @@
 package com.example.commerce.CakeShopcommerce.domain.address;
 
 import com.example.commerce.CakeShopcommerce.domain.client.dtoClient.updateClient;
+import com.example.commerce.CakeShopcommerce.domain.staff.dtoStaff.UpdateStaff;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -37,6 +38,27 @@ public class Address {
        if(data.address() == null){
            return;
        }
+        if(data.address().city() != null){
+            this.city = data.address().city();
+        }
+        if(data.address().zipCode() != null){
+            this.zipCode = data.address().zipCode();
+        }
+        if(data.address().road() != null){
+            this.road = data.address().road();
+        }
+        if(data.address().district() != null){
+            this.district = data.address().district();
+        }
+        if(data.address().state() != null){
+            this.houseNumber = data.address().houseNumber();
+        }
+    }
+
+    public void updateAddressStaff(UpdateStaff data) {
+        if(data.address() == null){
+            return;
+        }
         if(data.address().city() != null){
             this.city = data.address().city();
         }

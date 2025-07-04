@@ -62,7 +62,7 @@ public class Client {
 
     }
 
-    public void excluir() {
+    public void remove() {
         this.active = false;
     }
 }

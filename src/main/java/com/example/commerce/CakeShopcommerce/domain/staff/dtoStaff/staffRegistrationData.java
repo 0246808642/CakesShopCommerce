@@ -2,7 +2,7 @@ package com.example.commerce.CakeShopcommerce.domain.staff.dtoStaff;
 
 import com.example.commerce.CakeShopcommerce.domain.address.AddressDTO;
 import com.example.commerce.CakeShopcommerce.domain.validator.IdadeMinima;
-import com.example.commerce.CakeShopcommerce.domain.staff.enums.Adjutancy;
+import com.example.commerce.CakeShopcommerce.domain.enums.OperationalRole;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -24,7 +24,7 @@ public record staffRegistrationData(
         @Pattern(regexp = "^\\d{4}-\\d{1}$", message = "O formato da matricula deve ser 0000-1")
         String numberRegistration,
         @NotNull
-        Adjutancy adjutancy,
+        OperationalRole operationalRole,
         @NotBlank
         @Pattern(
                 regexp = "\\(\\d{2}\\) \\d{5}-\\d{4}",
